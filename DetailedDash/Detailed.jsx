@@ -35,7 +35,7 @@ const Detailed = () => {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/reports");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/reports`);
         if (response.ok) {
           const data = await response.json();
           setLowerCards(data);
